@@ -3,14 +3,19 @@ import InfoItem from './subcomp/InfoItem'
 import { PI_Name, PI_Depart, PI_Pos, PI_Addr, PI_Phone } from './Constant'
 import { updatePersonalInfo } from './action/actionCreators'
 import store from './store/store'
+import {IPersonState} from './store/reducer'
 
 /*!
 * @brief 用户信息组件
 */
 class Person extends Component {
 
-    public readonly state:Readonly<any> = {
-        state:store.getState().personalInf
+    public readonly state:Readonly<IPersonState> = {
+        name:store.getState().personalInf.name,
+        depart:store.getState().personalInf.depart,
+        phoneNum:store.getState().personalInf.phoneNum,
+        addr:store.getState().personalInf.addr,
+        pos:store.getState().personalInf.pos
     }
 
     constructor(props:any) {

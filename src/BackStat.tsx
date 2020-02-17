@@ -4,6 +4,7 @@ import InfoName from './subcomp/InfoName';
 import { BI_Date, BI_Transport, BI_Via_WH, BI_Other } from './Constant'
 import { updateBackInfo } from './action/actionCreators'
 import store from './store/store'
+import {IBackState} from './store/reducer'
 
 /**!
  * @brief 返程信息组件
@@ -16,8 +17,11 @@ class BackStat extends Component {
         this.checkValid = this.checkValid.bind(this);
     }
 
-    public readonly state:Readonly<any> = {
-        state:store.getState().backInfo
+    public readonly state:Readonly<IBackState> = {
+        backDate: store.getState().backInfo.backDate,
+        transport: store.getState().backInfo.transport,
+        viaWH: store.getState().backInfo.viaWH,
+        other: store.getState().backInfo.other
     }
 
     render() {

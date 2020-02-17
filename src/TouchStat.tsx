@@ -4,6 +4,7 @@ import MulSelItem from './subcomp/MulSelItem'
 import {TH_Touch, TH_Other, TH_Health} from './Constant'
 import store from './store/store'
 import {updateTouchHist} from './action/actionCreators'
+import {ITouchState} from './store/reducer'
 
 /**!
  * @brief 疫情接触情况组件
@@ -15,8 +16,10 @@ class TouchStat extends Component {
         this.checkValid = this.checkValid.bind(this);
     }
 
-    public readonly state:Readonly<any> = {
-        state:store.getState().touchHist
+    public readonly state:Readonly<ITouchState> = {
+        touch: store.getState().touchHist.touch,
+        health: store.getState().touchHist.health,
+        other: store.getState().touchHist.other
     }
 
     /// < 渲染数据
@@ -63,7 +66,7 @@ class TouchStat extends Component {
     updateValue(name:string, value:any){
 
         if (name === TH_Touch){
-            this.setState({touchHist:value}, ()=>{store.dispatch(updateTouchHist(this.state, this.checkValid()))});
+            this.setState({touch:value}, ()=>{store.dispatch(updateTouchHist(this.state, this.checkValid()))});
         }
         else if(name === TH_Health){
             this.setState({health:value}, ()=>{store.dispatch(updateTouchHist(this.state, this.checkValid()))});
@@ -75,7 +78,7 @@ class TouchStat extends Component {
 
     /// @brief 数据有效性检验
     checkValid(){
-        return this.state.touchHist.length > 0 &&
+        return this.state.touch.length > 0 &&
                this.state.health.length > 0;
     }
 }

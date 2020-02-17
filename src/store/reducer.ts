@@ -1,17 +1,29 @@
 import { ACT_UPDATE_PERSON_INFO, ACT_UPDATE_TOUCH_HIST, ACT_UPDATE_BACK_INFO } from '../action/actionTypes'
 import { MyAction } from '../action/actionCreators'
 
+export interface IPersonState {
+    name: string, depart: string, phoneNum: string, addr: string, pos: string
+}
+
+export interface ITouchState {
+    touch: string[], health: string[], other: string
+}
+
+export interface IBackState {
+    backDate: string, transport: string, viaWH: string, other: string
+}
+
 export interface IWholeState {
-    personalInf: { name: string, depart: string, phoneName: string, addr: string, pos: string },
-    touchHist: { touch: string[], health: string[], other: string },
-    backInfo: { backDate: string, transport: string, viaWH: string, other: string },
+    personalInf: IPersonState,
+    touchHist: ITouchState,
+    backInfo: IBackState,
     pStatus: boolean,
     tStatus: boolean,
     bStatus: boolean
 }
 
 const defaultState: IWholeState = {
-    personalInf: { name: '', depart: '', phoneName: '', addr: '', pos: '' },
+    personalInf: { name: '', depart: '', phoneNum: '', addr: '', pos: '' },
     touchHist: { touch: [], health: [], other: '' },
     backInfo: { backDate: '', transport: '', viaWH: '', other: '' },
     pStatus: false,
