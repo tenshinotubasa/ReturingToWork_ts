@@ -1,0 +1,173 @@
+*{
+    font-family:"Times New Roman", Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 100%;
+}
+
+/* 文本信息 */
+
+.title0{
+    display: block;
+    color: rgb(237,239,241);
+    font-size: 1.6em;
+    text-align: center;
+    margin: 90px auto 60px auto;
+    font-weight: bold;
+}
+
+.title1{
+    color: rgb(69, 81, 200);
+    font-size: 1.6em;
+    text-align: left;
+    font-weight: bold;
+}
+
+.title2{
+    color: rgb(69, 81, 200);
+    font-size: 1.4em;
+    text-align: left;
+    font-weight: bold;
+}
+
+.text-name{
+    text-align: left;
+    color: #000000;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.text-desc{
+    color: rgb(121,121,121);
+}
+
+.text-desc1{
+    color: rgb(115, 115, 115);
+    font-weight: bold;
+    text-align: left;
+    font-size: 1.2em;
+    margin: 10px 0 0 0;
+}
+
+.text-mark{
+    color:rgb(214,214,214);
+}
+
+/* 边框信息 */
+.back{
+    width:480px;
+    background-color: rgb(51,58,148);
+    border: 1px solid transparent;
+    margin: auto;
+}
+
+.content{
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    padding: 22px 20px 20px 20px;
+    margin: 0 20px 70px 20px;
+}
+
+.star{
+    color: red;
+    font-size: 1.3em;
+}
+
+.edit{
+    font-size: 1.2em;
+    border: 1px solid rgb(228, 228, 228);
+    padding: 15px;
+    width: calc(100% - 30px);    
+}
+
+label{
+    display: block;
+    font-size: 1.2em;
+    border: 1px solid rgb(228, 228, 228);
+    padding: 12px;
+    margin: 10px 0px;
+}
+
+input[type="checkbox"]{
+	width:20px;
+	height:20px;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle; 
+	line-height: 22px;
+    position: relative;
+    margin: 0px 10px 0px 0px;
+}
+	
+input[type="checkbox"]::before{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin:-2px 0 0 -2px;
+	background: #fff;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #d9d9d9;
+}
+
+input[type="checkbox"]:checked::before{
+	content: "\2714 ";
+	position: absolute;
+	top: 5;
+	left: 0;
+	width:100%;
+	border: 1px solid #d9d9d9;
+	color:rgb(0,0,0);
+	font-size: 18px;
+	font-weight: bold;
+}
+
+textarea{
+    height:80px;
+    font-size: 1.2em;
+    border: 1px solid rgb(228, 228, 228);
+    padding: 15px;
+    width: calc(100% - 30px);  
+}
+
+.infoItem{
+    text-align: left;
+    line-height: 2.2em;
+    margin: 40px 0px;
+}
+
+.infoName{
+    text-align: left;
+}
+
+.SubmitBtn{
+    height:65px;
+    color: white;
+    background-color: rgb(71, 82, 200);
+    width: 100%;
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 20px 0px 40px 0px;
+}
+.SubMitBtnInvalid{
+    height:65px;
+    color: white;
+    background-color: rgb(115, 115, 115);
+    width: 100%;
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 20px 0px 40px 0px;
+}
+
+.split_line{
+    height: 0px;
+    border: 1px solid rgb(70, 81, 199);
+    margin: 5px 0px;
+}
